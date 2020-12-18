@@ -1,21 +1,21 @@
 <?php
-interface registration{
-	public function check();
-	public function registeredusername();
-}
 
-class verify Implements registration{
+interface signup{
+	public function registeredemail();
+	public function check();
+}
+class verify implements signup{
 	protected $inputName;
 	protected $inputusername;
-	protected $inputEmail;
+	protected $inputemail;
 	protected $inputpassword;
 
-	private $registeredusername = 'masfuumr17';
+	private $registeredemail = 'baikin@gmail.com';
 
-	public function __construct($inputName, $inputusername, $inputEmail, $inputpassword){
+	public function __construct($inputName, $inputusername, $inputemail, $inputpassword){
 		$this->inputName = $inputName;
 		$this->inputusername = $inputusername;
-		$this->inputEmail = $inputEmail;
+		$this->inputemail = $inputemail;
 		$this->inputpassword = $inputpassword;
 	}
 	public function get_inputName(){
@@ -24,27 +24,35 @@ class verify Implements registration{
 	public function get_inputusername(){
 		return $this->inputusername;
 	}
-	public function get_inputEmail(){
-		return $this->inputEmail;
+	public function get_inputemail(){
+		return $this->inputemail;
 	}
 	public function get_inputpassword(){
 		return $this->inputpassword;
 	}
-	public function registeredusername(){
-		if($this->inputusername === $this->registeredusername ){
+	public function registeredemail(){
+		if($this->inputemail === $this->registeredemail ){
 			return true;
 		}else{
 			return false;
 		}
 	}
 	public function check(){
-		if($this->registeredusername()){
-			echo'username telah digunakan';
+		if($this->registeredemail()){
+			echo'email has been used';
 		}else{
-			echo' Registrasi Success';
+			echo'Success';
 		}
 	}
 }
-$date = new verify ('umroh', 'umroh11', 'umroh@gmail.com', '1234');
+$date = new verify ('sepeda', 'sepeda11', 'baik@gmail.com', '1234');
+echo $date->get_inputName();
+echo "<br>";
+echo $date->get_inputusername();
+echo "<br>";
+echo $date->get_inputemail();
+echo "<br>";
+echo $date->get_inputpassword();
+echo "<br>";
 $date->check();
 ?>
