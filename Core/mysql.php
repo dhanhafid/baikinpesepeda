@@ -8,7 +8,8 @@ class mysql{
 	public $status = fales;
 	public $erorMessage = null;
 
-	public function __construct(){
+	public function __construct()
+	{
 		$this->createConnection()
 	}
 	private function createConnection(){
