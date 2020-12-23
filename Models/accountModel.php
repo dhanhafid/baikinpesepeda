@@ -7,43 +7,43 @@ class account{
 	private $username;
 	private $password;
 
-public function getid_admin()
+public function getId_admin()
 {
 	return $this->id_admin;
 }
-public function getid_user()
+public function getId_user()
 {
 	return $this->id_user;
 }
-public function getid_officer()
+public function getId_officer()
 {
 	return $this->id_officer;
 }
-public function getusername()
+public function getUsername()
 {
 	return $this->username;
 }
-public function getpassword()
+public function getPassword()
 {
 	return $this->password;
 }
-public function setid_admin()
+public function setId_admin($id_admin)
 {
 	$this->id_admin = $id_admin;
 }
-public function setid_user()
+public function setId_user($id_user)
 {
 	$this->id_user = $id_user;
 }
-public function setid_officer()
+public function setId_officer($id_officer)
 {
 	$this->id_officer = $id_officer;
 }
-public function setusername()
+public function setUsername($username)
 {
 	$this->username = $username;
 }
-public function setpassword()
+public function setPassword($password)
 {
 	$this->password = $password;
 }
