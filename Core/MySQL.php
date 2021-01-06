@@ -1,29 +1,25 @@
 <?php
-require __DIR__ . "/ConfigurationDataBase.php";
+require __DIR__ . "/ConfigurationDatabase.php";
 
 class MySQL{
-	use ConfigurationDataBase;
+	use ConfigurationDatabase;
 
 	private $connection = null;
 
-	public $status = fales;
+	public $status = false;
 	public $erorMessage = null;
 
-	public function __construct()
-    {
-        $this->createConnection();
-    }
-
-	private function createConnection()
-	{
+	public function __construct(){
+		$this->createConnection();
+	}
+	private function createConnection(){
 		$this->connection = new mysqli($this->HOSTNAME, $this->USERNAME, $this->PASSWORD, $this->DBNAME, $this->PORT);
 		$this->checkConnection();
 	}
-
 	public function checkConnection(){
 		if($this->connection->connect_error){
 			$this->status = false;
-			$this->erorMessage = $this->connection->connect_error;
+			$this->errorMessage = $this->connection->connect_error;
 		}else {
 			$this->status = true;
 		}
@@ -33,4 +29,9 @@ class MySQL{
 			$this->connection->close();
 		}
 	}
+	public function getConnection(){
+		return $this->connection;
+	}
 }
+
+?>

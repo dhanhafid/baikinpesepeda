@@ -1,6 +1,6 @@
 <?php
 
-class account{
+class accountModel{
 	private $id_admin;
 	private $id_user;
 	private $id_officer;

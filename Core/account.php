@@ -6,12 +6,12 @@ class accountService extends ControllerDB{
 
 	public function insert($account)
 	{
-		$stmt = $this->connection->prepare("INSERT INTO `account` ( 'username', `password`) VALUES (?, ?)");
+		$stmt = $this->connection->prepare("INSERT INTO `user` ( `username`, `password`) VALUES (?, ?)");
 
         $username = $account->getUsername();
         $password = $account->getPassword();
 
-        $stmt->bind_param("ss", $username,$password); 
+        $stmt->bind_param("ss", $username, $password); 
 
         $process = $stmt->execute();
 
@@ -36,7 +36,7 @@ require __DIR__ . "/../Models/accountModel.php";
     $process = $service->insert($account);
 
     if ($process) {
-        print_r("Process successful");
+        print_r("Process success");
     } else {
         print_r("Process failed");
     }
